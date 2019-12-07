@@ -9,7 +9,7 @@ class PaysController < ApplicationController
   def update
     ActiveRecord::Base.transaction do
       @booking.status = Settings.paid_status_booking
-      @booking.save!(context: :payment)
+      @booking.save! context: :payment
       @user.update! wallet: (@user.wallet - @booking.total_price)
       flash[:success] = t ".success_payment"
     rescue ActiveRecord::RecordInvalid => e

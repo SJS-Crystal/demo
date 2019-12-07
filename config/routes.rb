@@ -44,9 +44,5 @@ Rails.application.routes.draw do
   end
   resources :ratings, only: :index
   patch "pays/update"
-  patch "bookings/update", to: "bookings#update"
-  post "bookings/create"
   resources :users
-  patch "bookings/update", to: "bookings#update"
-  post "bookings/create", to: "bookings#create"
 end

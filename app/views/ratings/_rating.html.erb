@@ -15,7 +15,7 @@
     <% end %>
   </td>
   <% status = [t(".verifiled_paid"), t(".verifiled_unpay"), t(".unverifile")] %>
-  <td><%= status[Booking.statuses[rating.booking_status]] %></td>
+  <td><%= rating.booking_status %></td>
   <td><%= rating.booking_total_price %></td>
   <td>
     <%= link_to t(".edit"), edit_booking_rating_path(rating.booking.id, rating.id, request: "rating"), class: "glyphicon glyphicon-edit" %>

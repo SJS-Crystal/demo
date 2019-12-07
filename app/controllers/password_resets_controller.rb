@@ -48,7 +48,7 @@ class PasswordResetsController < ApplicationController
 
   def get_user
     if params[:email]
-      @user = User.find_by email: params[:email].downcase
+      @user = User.find_by email: params[:email].downcase, provider: nil
       return if @user
     end
     flash.now[:danger] = t ".email_address_not_found"

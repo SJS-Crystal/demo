@@ -25,7 +25,7 @@ class BookingsController < ApplicationController
         @correct_params.each do |p|
           @new_booking = current_user.bookings.build hash_params(p)
           @new_booking.save!
-          flash[:success] = t ".success_booking"
+          flash[:warning] = t ".success_booking"
         rescue ActiveRecord::RecordInvalid => e
           flash[:danger] = e
           raise ActiveRecord::Rollback
@@ -35,7 +35,7 @@ class BookingsController < ApplicationController
         end
       end
     end
-    redirect_to new_subpitch_booking_path(@subpitch.id)
+    redirect_to new_subpitch_booking_path(@subpitch)
   end
 
   def update
@@ -66,7 +66,7 @@ class BookingsController < ApplicationController
     if @booking
       @user = @booking.user
     else
-      flash[:danger] = t "not_found"
+      flash[:danger] = t ".not_found"
       redirect_to request.referer || root_path
     end
   end
@@ -227,7 +227,7 @@ class BookingsController < ApplicationController
 
   def load_booked_list
     load_subpitch_info
-    @booked_list = @subpitch.bookings.today.have_not_been_canceled.asc
+    @booked_list = @subpitch.bookings.today.paid.asc
   end
 
   def declare_schedules

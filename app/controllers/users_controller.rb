@@ -36,7 +36,7 @@ class UsersController < ApplicationController
   def edit; end
 
   def update
-    if @user.update user_params
+    if @user.update update_user_params
       flash[:success] = t ".profile_updated"
       redirect_to send("#{@link}user_path")
     else

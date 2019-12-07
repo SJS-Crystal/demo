@@ -101,6 +101,8 @@ en:
         password_confirmation: Password confirmation
         wallet: Balance
     errors:
+      messages:
+        record_invalid: "%{errors}"
       models:
         user:
           attributes:
@@ -113,29 +115,6 @@ en:
           attribute:
             end_time:
               after: "bigger start time"
-  pays:
-    new:
-      payment: Payment
-      info: Information booking
-      billing_info: Billing Information
-      pitch: Pitch
-      subpitch: Subpitch
-      address: Address
-      start_time: Start time
-      end_time: End time
-      wallet: Your wallet
-      price_hour: Price perhour
-      number_of_hours: Number of hours
-      total: Total
-      cancel: Go Back
-      pay_now: Pay now
-      please_log_in: Please login to continue!
-      not_found: Not found booking!
-      paid: Paid
-    update:
-      not_found: Not found booking!
-      error_process: An error occurred while processing!
-      success_payment: Payment success
   users:
     id_unexist: ID not exist!
     please_log_in: You has not been logged in
@@ -329,6 +308,7 @@ en:
     smaller file
   not_allow: You are not allowed
   cant_repay: You have already paid before!
+  exist_paid_booking: Unfortunately, someone already paid before!
   subpitches:
     danger_load: "Load failure"
     danger_load_subpitch: "Load failure Subpitch"
@@ -377,6 +357,29 @@ en:
   oversize_upload: Maximum file upload capacity of 5MB. Please select a
     smaller file
   not_allow: You are not allowed
+  pays:
+    new:
+      payment: Payment
+      info: Information booking
+      billing_info: Billing Information
+      pitch: Pitch
+      subpitch: Subpitch
+      address: Address
+      start_time: Start time
+      end_time: End time
+      wallet: Your wallet
+      price_hour: Price perhour
+      number_of_hours: Number of hours
+      total: Total
+      cancel: Go Back
+      pay_now: Pay now
+      please_log_in: Please login to continue!
+      not_found: Not found booking!
+      paid: Paid
+    update:
+      not_found: Not found booking!
+      error_process: An error occurred while processing!
+      success_payment: Payment success
   bookings:
     index:
       title: "Booking List pitch "
@@ -433,7 +436,7 @@ en:
       time off schedule: Period off schedule!
       time has been taken: Period has been taken!
       error_insert_booking: An error occurred while processing!
-      success_booking: You book pitch successfully
+      success_booking: You book pitch successfully. Payment quickly!
       not_found_subpitch_id: Subpitch is not found!
       wrong_cycle_time: wrong cycle time!
       booking_success: Book pitch success
@@ -448,6 +451,7 @@ en:
       confirm: Are you sure?
       cancel: Cancel
       canceled: Canceled
+      payment: Wait for pay
     booking_index:
       rating: "Rating"
   ratings:

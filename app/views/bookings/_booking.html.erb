@@ -9,7 +9,7 @@
       <%= t ".canceled" %>
     <% elsif booking.start_time > Time.now %>
       <% if booking.status == Settings.paid_status_booking %>
-        <%= link_to t(".cancel"), bookings_update_path(id: booking),
+        <%= link_to t(".cancel"), booking_path(booking),
           method: :patch, data: {confirm: t(".confirm")} %>
       <% else %>
         <%= link_to t(".payment"), new_booking_pay_path(booking) %>

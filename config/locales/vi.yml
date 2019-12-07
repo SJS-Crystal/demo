@@ -86,6 +86,8 @@ vi:
         phone: Số điện thoại
         wallet: Số tiền
     errors:
+      messages:
+        record_invalid: "%{errors}"
       models:
         pitch:
           attributes:
@@ -153,7 +155,8 @@ vi:
       time off schedule: Sân đã đóng cửa rồi!
       time has been taken: Thời gian này đã được ai đó đặt rồi!
       error_insert_booking: Xảy ra lỗi trong khi xử lý!
-      success_booking: Bạn đặt sân thành công
+      success_booking: Bạn đặt sân thành công, hãy tiến hành thanh toán ngay
+        và luôn!
       not_found_subpitch_id: Sân không tồn tại!
       wrong_cycle_time: Sai chu kì thơi gian!
       booking_success: Đặt sân thành công
@@ -395,6 +398,7 @@ vi:
   oversize_upload: Dung lượng tệp tải lên tối đa 5MB. Vui lòng chọn tệp nhỏ hơn
   not_allow: Bạn không được phép
   cant_repay: Bạn đã thanh toán trước đó rồi!
+  exist_paid_booking: Có không giữ, mất đừng tìm. Cơ hội chỉ đến 1 lần!
   ratings:
     index:
       title: "Đánh giá của tôi"

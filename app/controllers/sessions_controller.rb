@@ -5,10 +5,7 @@ class SessionsController < ApplicationController
   def new; end
 
   def create
-    @auth_hash = request.env["omniauth.auth"]
     if @auth_hash
-      @user = User.find_by provider: @auth_hash["provider"],
-        uid: @auth_hash["uid"]
       login_provider_user
       redirect_back_or @user
     elsif (@user&.authenticate params[:session][:password]) && !@user.provider
@@ -52,9 +49,14 @@ class SessionsController < ApplicationController
   private
 
   def load_user
-    return if request.env["omniauth.auth"]
-
-    @user = User.find_by email: params[:session][:email].downcase
+    if request.env["omniauth.auth"]
+      @auth_hash = request.env["omniauth.auth"]
+      @user = User.find_by provider: @auth_hash["provider"],
+                           uid: @auth_hash["uid"]
+    else
+      @user = User.find_by email: params[:session][:email].downcase,
+                           provider: nil
+    end
   end
 
   def check_activated

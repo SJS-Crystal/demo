@@ -10,34 +10,12 @@ User.create!({full_name: "Owner User", email: "owner@soccer.vn",
   name  = Faker::Name.name
   description = Faker::Lorem.sentence
   address = Faker::Address.street_address
-  start_time = DateTime.strptime("05:30 +07:00", "%H:%M %z")
-  end_time = DateTime.strptime("23:30 +07:00", "%H:%M %z")
+  start_time = DateTime.strptime("05:59 +07:00", "%H:%M %z")
+  end_time = DateTime.strptime("23:59 +07:00", "%H:%M %z")
 
   Pitch.create!(
     name: name,
     user_id: 2,
-    description: description,
-    country: "vn",
-    address: address,
-    phone: "111111111",
-    city:Faker::Address.city,
-    district: Faker::Address.state,
-    start_time: start_time,
-    end_time: end_time,
-    limit: 2
-  )
-end
-
-10.times do |n|
-  name  = Faker::Name.name
-  description = Faker::Lorem.sentence
-  address = Faker::Address.street_address
-  start_time = DateTime.strptime("04:00 +07:00", "%H:%M %z")
-  end_time = DateTime.strptime("22:00 +07:00", "%H:%M %z")
-
-  Pitch.create!(
-    name: name,
-    user_id: 3,
     description: description,
     country: "vn",
     address: address,
@@ -117,25 +95,4 @@ end
     size: size,
     status: Faker::Number.between(from: 0, to: 1)
   })
-end
-
-
-50.times do |n|
-  name = "Subpitch _ #{n}"
-  Subpitch.create!({name: name, description: "mo ta 1",status: 0,pitch_id: 1,price_per_hour: 30000, currency: "Dong", size: "5 nguoi", subpitch_type_id: 1, created_at: Time.now, updated_at: Time.now})
-end
-
-
-10.times do |n|
-  name = "Subpitch _ #{n}"
-  Subpitch.create!({name: name, description: "mo ta 1",status: 0,pitch_id: 100,price_per_hour: 30000, currency: "Dong", size: "5 nguoi", subpitch_type_id: 1, created_at: Time.now, updated_at: Time.now})
-end
-
-
-50.times do |n|
-  Booking.create!({user_id: 1, subpitch_id: 2, start_time: Time.now, end_time: Time.now, message: "hello moi nguoi", status: 0, total_price: 50000})
-end
-
-10.times do |n|
-  Booking.create!({user_id: 1, subpitch_id: 71, start_time: Time.now, end_time: Time.now, message: "hello moi nguoi", status: 0, total_price: 50000})
 end

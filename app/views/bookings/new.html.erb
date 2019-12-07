@@ -25,14 +25,14 @@
                     <div id="ck-button" class="availble pasttime">
                       <label>
                         <%= f.check_box :"period#{index}", disabled: true %>
-                        <span><%= box[0] %> to <%= box[1] %></span>
+                        <span><%= "#{box[0]} #{t(".to")} #{box[1]}" %></span>
                       </label>
                     </div>
                   <% elsif box[2] %>
                     <div id="ck-button" class="taken">
                       <label>
                         <%= f.check_box :"period#{index}", disabled: true %>
-                        <span><%= box[0] %> to <%= box[1] %></span>
+                        <span><%= "#{box[0]} #{t(".to")} #{box[1]}" %></span>
                       </label>
                     </div>
                   <% else %>
