@@ -84,3 +84,4 @@ size_avatar: [150, 150] # here is limit-top, limit-under is class
 per_page: 10
 avatar_default_path: app/assets/images/users/icon-user-default.png
 link_footer_admin: "https://coreui.io"
+comment_length_max: 150

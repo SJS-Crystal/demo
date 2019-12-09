@@ -4,6 +4,8 @@ class Subpitch < ApplicationRecord
   belongs_to :pitch
   belongs_to :subpitch_type
   has_many :bookings, dependent: :destroy
+  has_many :ratings, through: :bookings
+  has_many :comments, through: :ratings
 
   validates :name, presence: true, length: {maximum: Settings.size.s50}
   validates :description, length: {maximum: Settings.size.s255}

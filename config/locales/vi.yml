@@ -1,4 +1,11 @@
 vi:
+  comments:
+    create:
+      comment_success: Thành công
+      not_allow: Bạn không được phép
+      not_found_rating_id: Không tìm thấy review
+    comment:
+      not_found_comment: Không tìm thấy bình luận
   helpers:
     label:
       user:
@@ -85,6 +92,8 @@ vi:
         password_confirmation: Xác nhận mật khẩu
         phone: Số điện thoại
         wallet: Số tiền
+      comment:
+        content: Nội dung
     errors:
       messages:
         record_invalid: "%{errors}"
@@ -277,6 +286,10 @@ vi:
         create: "Tạo sân nhỏ"
         update: "Cập nhật sân nhỏ"
   shared:
+    comment:
+      content: "Bình luận ở đây"
+      comment: "Bình luận"
+      reply: Trả lời
     error_messages:
       count:
         one: "1 error"
@@ -426,8 +439,6 @@ vi:
       size: "Kích cỡ: %{add}"
       subpitch_type: "Loại sân: %{add}"
       desc: "Mô tả: %{add}"
-      content: "Bình luận ở đây"
-      comment: "Bình luận"
     subpitch:
       name: "Tên: %{add}"
       price_per_hour: "Giá mỗi giờ: %{add}"

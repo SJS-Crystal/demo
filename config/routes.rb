@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   root "static_pages#home"
 
+  post "comment/create", to: "comments#create"
   namespace :admin do
     root "pages#home"
     resources :subpitch_types

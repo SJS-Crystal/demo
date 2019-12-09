@@ -1,4 +1,11 @@
 en:
+  comments:
+    create:
+      comment_success: Comment successfully
+      not_allow: You are not allowed!
+      not_found_rating_id: Rating's id not found!
+    comment:
+      not_found_comment: Not found comment!
   helpers:
     label:
       user:
@@ -169,6 +176,10 @@ en:
       address: "Address: "
       notification: "There are no valid football fields!"
   shared:
+    comment:
+      content: "Comment here"
+      comment: "Comment"
+      reply: Reply
     error_messages:
       count:
         one: "1 error"
@@ -319,8 +330,6 @@ en:
       size: "Size: %{add}"
       subpitch_type: "Subpitch type: %{add}"
       desc: "Description: %{add}"
-      content: "Comment here"
-      comment: "Comment"
     subpitch:
       name: "Name: %{add}"
       price_per_hour: "Price per hour: %{add}"

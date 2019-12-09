@@ -1,27 +1,32 @@
-<div style = "display: table; width: 100%; margin-bottom: 20px;">
-  <div class="col-md-6" style="margin: 0 auto; text-align: center; float: none; ">
-    <div class="card" style="margin-bottom: 15px;">
-      <% if @subpitch.picture.attached? %>
-        <div class="card-header bg-facebook content-center">
-          <%= image_tag @subpitch.picture, style: "max-width: 350px; height: 100px;" %>
-        </div>
-      <% end %>
-      <div class="card-body row text-center">
-        <div class="col">
-          <div class="text-uppercase text-muted small"><%= t ".name", add: @subpitch.name %></div>
-          <div class="text-uppercase text-muted small"><%= t ".price_per_hour", add: @subpitch.price_per_hour %></div>
-          <div class="text-uppercase text-muted small"><%= t ".size", add: @subpitch.size %></div>
-        </div>
-        <div class="c-vr"></div>
-        <div class="col">
-          <div class="text-uppercase text-muted small"><%= t ".desc", add: @subpitch.description %></div>
-          <div class="text-uppercase text-muted small"><%= t ".subpitch_type", add: @subpitch.subpitch_type_name %></div>
+
+<section class="banner-area relative">
+  <div class="overlay overlay-bg"></div>
+  <div class="container user">
+    <div class="row fullscreen align-items-center justify-content-between">
+      <div style = "display: table; width: 100%; margin-bottom: 20px;" class="p-top-150px">
+        <div class="col-md-12" style="margin: 0 auto; text-align: center; float: none; ">
+          <div class="card" style="margin-bottom: 15px;">
+            <% if @subpitch.picture.attached? %>
+              <div class="card-header bg-facebook content-center">
+                <%= image_tag @subpitch.picture, style: "max-width: 350px; height: 100px;" %>
+              </div>
+            <% end %>
+            <div class="card-body row text-center">
+              <div class="col">
+                <div class="text-uppercase text-muted small"><%= t ".name", add: @subpitch.name %></div>
+                <div class="text-uppercase text-muted small"><%= t ".price_per_hour", add: @subpitch.price_per_hour %></div>
+                <div class="text-uppercase text-muted small"><%= t ".size", add: @subpitch.size %></div>
+              </div>
+              <div class="c-vr"></div>
+              <div class="col">
+                <div class="text-uppercase text-muted small"><%= t ".desc", add: @subpitch.description %></div>
+                <div class="text-uppercase text-muted small"><%= t ".subpitch_type", add: @subpitch.subpitch_type_name %></div>
+              </div>
+            </div>
+          </div>
+          <%= render "shared/comment" %>
         </div>
       </div>
     </div>
-    <%= form_for @comment, url: "#" do |f| %>
-      <%= f.text_area :content, placeholder: t(".content"), style: "width: 60%" %>
-      <%= f.submit t(".comment"), class: "btn btn-pill btn-block btn-success", style: "width: 50%; margin: 0 auto" %>
-    <% end %>
   </div>
-</div>
+</section>

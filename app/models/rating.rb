@@ -4,7 +4,8 @@ class Rating < ApplicationRecord
 
   belongs_to :user
   belongs_to :booking
-
+  delegate :subpitch, to: :booking
+  has_many :comments, dependent: :destroy
   validates :content, presence: true, length: {minimum: Settings.size.s10}
   validates :star, presence: true, numericality: true
 

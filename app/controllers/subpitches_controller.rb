@@ -8,7 +8,9 @@ class SubpitchesController < ApplicationController
   end
 
   def show
-    @comment = Comment.new
+    @new_comment = Comment.new
+    @ratings = @subpitch.ratings
+    @comments = @subpitch.comments
   end
 
   private

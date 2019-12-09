@@ -1,0 +1,9 @@
+@import 'variables';
+@import "font-awesome-sprockets";
+@import "font-awesome";
+
+.comment{
+  textarea:focus{
+    outline: 0;
+  }
+}

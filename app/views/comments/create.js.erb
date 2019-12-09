@@ -1,0 +1,8 @@
+$("div.alert").remove();
+<% if @fail %>
+  $("body").prepend('<div class="alert alert-danger"> <%= @fail %></div>')
+<% else %>
+  $("body").prepend('<div class="alert alert-success"><%= @success %></div>');
+  $('#form<%= @comment.rating_id %> textarea').val('');
+  $('.comment.<%= @comment.rating_id %>').append('<%= j render "comments/new_comment" %>');
+<% end %>

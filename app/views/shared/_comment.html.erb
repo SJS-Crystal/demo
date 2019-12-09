@@ -1,0 +1,39 @@
+<div style="background: #1313176e;color: #000; padding: 50px 250px;" class="comment">
+  <div style="background: aliceblue; padding: 0 50px;">
+    <h1 class="center" style="padding: 20px 0 40px;">Review</h1>
+    <% @ratings.each do |rating| %>
+      <% user = User.find_by id: rating.user_id %>
+      <div style="margin: 0 auto; text-align: left; float: none;">
+        <p style="float: left;padding-right: 40px;width: 170px;">
+          <%= link_to user.full_name, user, style: "color: #d87900; font-weight: bold" %>
+        </p>
+        <div style="display: table">
+          <p style="margin: 0"><%= rating.content %></p>
+          <p>
+            <span style="padding-left: 30px, display: inline-block">
+              <% rating.star.times do %>
+                <i class="fa fa-star fa-1x" style="color:#ffa600"></i>
+              <% end %>
+            </span>
+          </p>
+        </div>
+        <div class="comment <%= rating.id %>" style="margin-left: 30px;">
+          <% @comments.by_rating(rating).each do |comment| %>
+            <p style="float: left; padding-right: 40px; width: 170px;">
+              <%= link_to comment.user.full_name, user, style: "color: #d87900; font-weight: bold" %>
+            </p>
+            <div style="display: table">
+              <p><%= comment.content %></p>
+            </div>
+          <% end %>
+        </div>
+        <span id="<%= rating.id %>" class="btn btn-primary reply" style=""><%= t ".reply" %></span>
+        <%= form_for @new_comment, remote: true, url: comment_create_path, html: {style: "padding: 0 30px; display: none;", id: "form#{rating.id}"} do |f| %>
+          <%= f.hidden_field :rating_id, value: rating.id %>
+          <%= f.text_area :content, placeholder: t(".content"), style: "resize:none" %>
+          <%= f.submit t(".comment"), class: "btn btn-success" %>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+</div>
